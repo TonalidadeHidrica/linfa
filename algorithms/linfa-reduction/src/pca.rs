@@ -180,6 +180,11 @@ impl Pca<f64> {
     pub fn singular_values(&self) -> &Array1<f64> {
         &self.sigma
     }
+
+    /// Return the matrix consisting of the the embeddnig vectors
+    pub fn embedding(&self) -> &Array2<f64> {
+        &self.embedding
+    }
 }
 
 impl<F: Float, D: Data<Elem = F>> PredictInplace<ArrayBase<D, Ix2>, Array2<F>> for Pca<F> {
